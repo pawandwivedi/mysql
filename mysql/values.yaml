@@ -91,7 +91,8 @@ readinessProbe:
 
 ## Persist data to a persistent volume
 persistence:
-  enabled: true
+  existingClaim: mysql-pvc
+  #enabled: true
   ## database data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -100,9 +101,9 @@ persistence:
   ##   GKE, AWS & OpenStack)
   ##
   # storageClass: "-"
-  accessMode: ReadWriteOnce
-  size: 8Gi
-  annotations: {}
+  #accessMode: ReadWriteOnce
+  #size: 8Gi
+  #annotations: {}
 
 ## Use an alternate scheduler, e.g. "stork".
 ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
